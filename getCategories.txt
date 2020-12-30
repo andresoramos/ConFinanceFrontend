@@ -1,0 +1,3 @@
+curl -X POST https://sandbox.plaid.com/categories/get \
+  -H 'Content-Type: application/json' \
+  -d '{}'
