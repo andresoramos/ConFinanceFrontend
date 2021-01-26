@@ -24,7 +24,11 @@ class AccountsScreen extends React.Component {
   }
   componentDidMount = async () => {
     const linkToken = await Plaid.getLinkToken();
-    if (this.props.currUser && this.props.currUser.accessTokens.length > 0) {
+    if (
+      this.props.currUser &&
+      this.props.currUser.accessTokens &&
+      this.props.currUser.accessTokens.length > 0
+    ) {
       this.populateAccounts(this.props.currUser.accessTokens, linkToken);
     } else {
       this.setState({link_token: linkToken, loading: false});
@@ -38,7 +42,7 @@ class AccountsScreen extends React.Component {
       accessTokens.map(async (t) => {
         return await Plaid.getAccounts(t);
       }),
-    );
+    ).catch((error) => {});
     var accounts = this.state.accounts;
     accounts.push(...linkedAccounts.flat(1));
     this.setState({

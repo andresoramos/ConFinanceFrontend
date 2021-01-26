@@ -58,7 +58,12 @@ const shouldFetchTransactions = (state, filter) => {
 export const fetchTransactions = (filter) => (dispatch, getState) => {
   if (shouldFetchTransactions(getState(), filter)) {
     return dispatch(
-      doFetchTransactions(getState().user.currUser.accessTokens, filter),
+      doFetchTransactions(
+        getState().user.currUser.accessTokens
+          ? getState().user.currUser.accessTokens
+          : [],
+        filter,
+      ),
     );
   }
 };

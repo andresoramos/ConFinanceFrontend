@@ -36,26 +36,7 @@ class SearchScreen extends React.Component {
     this.state = {
       search: '',
       mapView: true,
-      favoritedBusinesses: [] /* [
-        {
-          name: `Nick's sushi 4`,
-          liked: true,
-          category: 'Restaurant',
-          rating: 4.7,
-        },
-        {
-          name: 'Andres69',
-          liked: true,
-          category: 'Resturant - Strip Club',
-          rating: 0.2,
-        },
-        {
-          name: "Nick's Stripclub",
-          liked: true,
-          category: 'Adult Cabaret',
-          rating: 4.1,
-        },
-      ], */,
+      favoritedBusinesses: [],
       numberChange: 0,
       selectedBusiness: null,
       nearbyBusinesses: null,

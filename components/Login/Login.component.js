@@ -20,7 +20,6 @@ class Login extends React.Component {
         this.state.email,
         this.state.password,
       );
-      console.log(data, 'THIS IS THE DATA FROM LOGIN');
       this.props.logIn(data);
     } catch (err) {
       console.log('Unable to log in in login component', err);

@@ -7,11 +7,11 @@ import FavoriteScreen from './FavoriteScreen';
 
 import ListMenu from '../components/ListMenu/ListMenu.component';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import RatingBar from '../components/RatingBar/RatingBar.component';
 import {Colors} from '../colors';
 import {connect} from 'react-redux';
 import Logout from '../components/Logout/Logout.component';
+import CompanyFeedback from './../components/CompanyFeedback/CompanyFeedback.component';
 const Screens = [
   {
     name: 'Lifestyle',
@@ -24,11 +24,11 @@ const Screens = [
     component: FavoriteScreen,
   },
 
-  /*   {
-    name: 'Preferences',
-    iconName: 'cog',
-    component: PreferencesScreen,
-  }, */
+  {
+    name: 'Tell us about a company',
+    iconName: 'comments',
+    component: CompanyFeedback,
+  },
   {
     name: 'Logout',
     iconName: 'power-off',
@@ -95,7 +95,6 @@ class UserScreen extends React.Component {
   };
 
   render() {
-    console.log('CURR USER', this.props.currUser);
     return (
       <View style={styles.pageContainer}>
         <ListMenu

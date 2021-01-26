@@ -20,11 +20,13 @@ const doLogOut = () => ({
   type: LOG_OUT,
 });
 
-export const logIn = (data) => ({
-  type: LOG_IN,
-  currUser: data,
-  receivedAt: Date.now(),
-});
+export const logIn = (data) => {
+  return {
+    type: LOG_IN,
+    currUser: data,
+    receivedAt: Date.now(),
+  };
+};
 
 const doFetchCurrUser = () => (dispatch) => {
   dispatch(updateUserLoading(true));

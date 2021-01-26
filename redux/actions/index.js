@@ -81,11 +81,14 @@ const doLogOut = () => ({
   type: LOG_OUT,
 });
 
-export const logIn = (data) => ({
-  type: LOG_IN,
-  currUser: data,
-  receivedAt: Date.now(),
-});
+export const logIn = (data) => {
+  console.log("Something you're doing is making this run, too");
+  return {
+    type: LOG_IN,
+    currUser: data,
+    receivedAt: Date.now(),
+  };
+};
 
 const fetchCurrUser = () => (dispatch) => {
   dispatch(updateUserLoading(true));

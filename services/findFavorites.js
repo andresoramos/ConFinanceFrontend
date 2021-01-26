@@ -4,7 +4,6 @@ import decode from 'jwt-decode';
 import tokens from '../token';
 
 async function findFavorites() {
-  console.log('Find favorites ran');
   const token = await AsyncStorage.getItem('userToken');
   const userData = decode(token);
   const payload = {userInfo: userData};

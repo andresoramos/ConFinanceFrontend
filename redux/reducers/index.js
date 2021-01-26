@@ -19,6 +19,17 @@ import {
 import user from './user.reducer';
 import {State} from 'react-native-gesture-handler';
 
+const feedBackSlice = createSlice({
+  name: 'companyFeedback',
+  initialState: {questions: {hi: 'You made it!'}, name: ''},
+
+  reducers: {
+    updateQuestions: (state, action) => {
+      console.log('deal with this once it works');
+    },
+  },
+});
+
 const slice = createSlice({
   name: 'search',
   initialState: {nearbyBusinesses: [], favoritedBusinesses: []},
@@ -88,7 +99,7 @@ const slice = createSlice({
     },
   },
 });
-
+const companyFeedbackReducer = feedBackSlice.reducer;
 const searchReducer = slice.reducer;
 const businessUpdateBegan = createAction('search/updateNearbyBusinesses');
 const favBusinessUpdateBegan = createAction('search/updateFavoriteBusinesses');
@@ -216,6 +227,7 @@ const rootReducer = combineReducers({
   selectedSortByOption,
   selectedChartTypeOption,
   searchReducer,
+  companyFeedbackReducer,
 });
 
 export default rootReducer;
